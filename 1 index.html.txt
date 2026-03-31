@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Profile</title>
+</head>
+
+<body>
+
+<h1>Sithum Sanjana Welagedara</h1>
+<p>A/L Technology Student | Software Developer</p>
+
+<h2>About Me</h2>
+<p>I am 18 years old and I live in Anuradhapura. I like web design.</p>
+
+<h2>Skills</h2>
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+<h2>Contact</h2>
+<p>Email: your@email.com</p>
+
+</body>
+</html>

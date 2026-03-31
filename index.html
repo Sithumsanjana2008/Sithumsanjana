@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sithum Sanjana</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 10%;
+            border: 3px solid white;
+        }
+
+        h1 {
+            margin: 10px 0;
+        }
+
+        p {
+            color: #cbd5e1;
+        }
+
+        .buttons a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 20px;
+            background: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        .buttons a:hover {
+            background: #2563eb;
+        }
+
+        .section {
+            padding: 30px;
+        }
+
+button animation
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation */
+header, .section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Button hover effect */
+.buttons a {
+    transition: 0.3s;
+}
+
+.buttons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #3b82f6;
+}
+
+    </style>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<style>
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+header h1 {
+    background: linear-gradient(90deg, #3b82f6, #9333ea, #f97316, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 5s infinite linear;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.section {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 800px;
+}
+
+.buttons a:hover {
+    transform: scale(1.2) rotate(3deg);
+    box-shadow: 0 0 20px #3b82f6, 0 0 30px #9333ea;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #3b82f6, 0 0 30px #9333ea;
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.project a:hover {
+    background: #2563eb;
+}
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #cbd5e1;
+}
+
+.contact-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #3b82f6;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header img {
+        width: 120px;
+    }
+
+    .section {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .buttons a {
+        margin: 5px;
+        padding: 10px 15px;
+    }
+}
+
+#darkModeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 20;
+    transition: 0.3s;
+}
+
+#darkModeToggle:hover {
+    background: #2563eb;
+    transform: scale(1.1);
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background: #0f172a; /* dark gradient fallback */
+    color: #cbd5e1;
+}
+
+/* Example: Glass sections darker */
+body.dark-mode .section {
+    background: rgba(20, 20, 20, 0.3);
+}
+
+/* Buttons */
+body.dark-mode .buttons a,
+body.dark-mode .hero-btn,
+body.dark-mode .project a {
+    background: #9333ea;
+}
+
+body.dark-mode #navbar {
+    background: rgba(10, 10, 10, 0.7);
+}
+
+/* Section Title Style */
+.section-title {
+    font-size: 2em;
+    margin-bottom: 15px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #3b82f6, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Section Text */
+.section-text {
+    color: #cbd5e1;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Light Mode Text */
+body:not(.dark-mode) .section-text {
+    color: #1e293b;
+}
+
+/* Dark Mode Text */
+body.dark-mode .section-text {
+    color: #cbd5e1;
+}
+
+.skill {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.bar {
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 10px;
+    border-radius: 20px;
+    animation: load 2s ease-in-out;
+}
+
+
+/* Web Design Skills */
+.uiux { width: 75%; background: #ec4899; }
+.responsive { width: 85%; background: #22c55e; }
+.figma { width: 70%; background: #f59e0b; }
+
+/* Web Development Skills */
+.html { width: 90%; background: #3b82f6; }
+.css { width: 80%; background: #9333ea; }
+.js { width: 70%; background: #f97316; }
+
+@keyframes load {
+    from { width: 0; }
+}
+.skill-category {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+    color: #3b82f6;
+    text-align: left;
+}
+
+.info-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    text-align: Center;
+}
+
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0f172a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    color: white;
+    font-size: 2em;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="loader">
+    <h1>Loading...</h1>
+</div>
+
+<div id="particles-js"></div>
+<header>
+     <img src="C:\Users\user\OneDrive\Desktop\MY WEB/myphoto.jpg"><max-width:90><height:auto><border-radius:12px><box-shadow:0 4px 15px rgba(0,0,0,0,2)>
+    <h1 id="typing"></h1>
+    <p><B>A/L Technology Student | Software Developer</B></p>
+
+    <div class="buttons">
+        <a href="https://www.facebook.com/share/14MjczADWrC/">Facebook</a>
+        <a href="https://www.instagram.com/sithum5891?igsh=MWswcG04eW00a2tjZw==">Instagram</a>
+        <a href="https://www.tiktok.com/@white_sanju?_r=1&_t=ZS-957gObYpPuq">TikTok</a>
+        <a href="https://wa.me/+94705173364?text=Hellow🐰👀"">WhatsApp</a>
+    </div>
+</header>
+
+    <div class="info-box">
+    <p><strong>Name:</strong> Sithum Sanjana Welagedara</p>
+    <p><strong>Age:</strong> 18</p>
+    <p><strong>Location:</strong> Anuradhapura 🇱🇰</p>
+    <p><strong>Education:</strong> A/L Student</p>
+</div>
+
+
+
+<div class="section" id="skills">
+    <h2 class="section-title">⚡ My Skills</h2>
+
+    <!-- Web Design -->
+    <h3 class="skill-category">🎨 Web Design</h3>
+
+    <div class="skill">
+        <p>UI/UX Design</p>
+        <div class="bar"><div class="progress uiux"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Responsive Design</p>
+        <div class="bar"><div class="progress responsive"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>Figma / Design Tools</p>
+        <div class="bar"><div class="progress figma"></div></div>
+    </div>
+
+    <!-- Web Development -->
+    <h3 class="skill-category">💻 Web Development</h3>
+
+    <div class="skill">
+        <p>HTML</p>
+        <div class="bar"><div class="progress html"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>CSS</p>
+        <div class="bar"><div class="progress css"></div></div>
+    </div>
+
+    <div class="skill">
+        <p>JavaScript</p>
+        <div class="bar"><div class="progress js"></div></div>
+    </div>
+</div>
+
+<div class="section" data-aos="fade-up">
+    <h2><Ul>My Projects</Ul></h2>
+    <div class="projects">
+        <div class="project">
+            <h3>Project 1: Processing...</h3>
+            <p>...</p>
+            <a href="#" target="_blank">uploading...</a>
+        </div>
+        <div class="project">
+            <h3>Project 2: Processing...</h3>
+            <p>...</p>
+            <a href="#" target="_blank">uploading...</a>
+        </div>
+        <!-- Add more projects as needed -->
+    </div>
+</div>
+
+<script>
+let text = "Sithum Sanjana Welagedara";
+let i = 0;
+
+function typing() {
+    if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typing, 100);
+    }
+}
+
+typing();
+</script>
+
+<script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 90 },
+    "size": { "value": 5 },
+    "move": { "speed": 4 },
+    "line_linked": { "enable": true }
+  }
+});
+</script>
+
+<div class="section" data-aos="fade-up">
+    <h2><ul>Contact Me</ul></h2>
+    <form action="https://formsubmit.co/sithumsanjana325@gmail.com" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+<script>
+const toggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+toggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if(body.classList.contains('dark-mode')){
+        toggle.textContent = '☀️ Light Mode';
+    } else {
+        toggle.textContent = '🌙 Dark Mode';
+    }
+});
+</script>
+
+<script>
+window.addEventListener("load", function(){
+    document.getElementById("loader").style.display = "none";
+});
+</script>
+
+</body>
+</html>
